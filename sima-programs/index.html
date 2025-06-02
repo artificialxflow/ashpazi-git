@@ -10,178 +10,262 @@
     /* Custom CSS */
     body {
       font-family: sans-serif;
+      background: #fff;
     }
 
     /* Header Section */
+    .header-bg {
+      background-color: #ff5f7e;
+      height: 270px;
+      width: 120vw;
+      min-width: 400px;
+      max-width: 800px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 60% 60%;
+      border-bottom-right-radius: 60% 60%;
+      z-index: 1;
+    }
     .header {
-      background-color: #f8bbd0;
-      /* Pink/Red color */
-      color: white;
-      padding: 10px;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      position: relative;
+      z-index: 2;
+      width: 100vw;
+      min-width: 360px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header-row {
+      width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+      padding: 18px 32px 0 32px;
+    }
+    .header-icon {
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
       align-items: center;
-      position: sticky; /* Add sticky or fixed to keep it at top on scroll */
-      top: 0;
-      z-index: 1000; /* Ensure it stays above other content */
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     }
-
-    .header-right {
-      margin-right: 10px;
+    .header-icon img {
+      width: 28px;
+      height: 28px;
     }
-
-    .header-center {
+    .header-title {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 54px;
+      margin-bottom: 0;
       text-align: center;
-      flex-grow: 1; /* Allow center text to take available space */
-    }
-
-    .header-left {
-      margin-left: 10px;
+      width: 100%;
+      letter-spacing: 0.5px;
     }
 
     /* Program Cards Grid */
-    .program-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      overflow: hidden; /* Ensures image corners are also rounded */
+    .programs-section {
+      margin-top: 60px;
+      z-index: 3;
+      position: relative;
+      padding-left: 24px;
+      padding-right: 24px;
     }
-
+    .program-card {
+      background: none;
+      border: none;
+      box-shadow: none;
+      text-align: center;
+      margin-bottom: 36px;
+      padding: 0;
+    }
     .program-card img {
       width: 100%;
-      height: 180px; /* Fixed height as requested */
-      object-fit: cover; /* Ensures image covers the area without distortion */
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
+      aspect-ratio: 1/1;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 8px;
     }
-
-    .program-card h5 {
-      padding: 10px;
-      margin: 0;
-      color: #333;
+    .program-title {
+      margin-top: 2px;
+      font-size: 1.13rem;
+      color: #222;
+      font-weight: 800;
+      letter-spacing: 0.1px;
     }
 
     /* Bottom Navigation Bar */
     .bottom-nav {
-      background-color: #f8bbd0;
-      /* Pink/Red color */
+      background: #fff;
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 10px;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+      padding: 0 0 5px 0;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 1000; /* Ensure it stays above other content */
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 1000;
+      box-shadow: 0 -2px 12px rgba(255,95,126,0.10);
+      height: 65px;
+      min-width: 360px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 32px;
+      padding-right: 32px;
     }
-
-    .bottom-nav img {
-      width: 30px;
-      height: 30px; /* Set fixed height to avoid aspect ratio issues */
-      object-fit: contain; /* Ensures icon scales within bounds */
+    .nav-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 60px;
+      width: 50px;
+      position: relative;
+    }
+    .nav-icon img {
+      width: 28px;
+      height: 28px;
+      filter: invert(41%) sepia(99%) saturate(747%) hue-rotate(314deg) brightness(101%) contrast(101%);
+      opacity: 0.8;
+    }
+    .nav-icon.active img {
+      opacity: 1;
+    }
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      background: #ff5f7e;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
     }
 
     /* Responsive adjustments */
     @media (max-width: 576px) {
-      .header {
-        padding: 5px;
+      .header-bg, .bottom-nav {
+        min-width: 0;
+        max-width: 100vw;
       }
-
-      .header-center h4 {
+      .header-title {
         font-size: 1.2rem;
       }
-
-      .program-card h5 {
+      .program-title {
         font-size: 1rem;
       }
-
-      .bottom-nav {
-        padding: 5px;
+      .header-row {
+        padding: 18px 10px 0 10px;
       }
-
-      .bottom-nav img {
-        width: 25px;
-        height: 25px;
+      .header-icon {
+        width: 32px;
+        height: 32px;
+      }
+      .header-icon img {
+        width: 22px;
+        height: 22px;
+      }
+      .nav-icon {
+        width: 36px;
+        height: 48px;
+      }
+      .nav-icon img {
+        width: 22px;
+        height: 22px;
       }
     }
-
-    /* Ensure content is not hidden by fixed header/footer */
     body {
-        padding-top: 60px; /* Adjust based on header height */
-        padding-bottom: 70px; /* Adjust based on footer height */
+      padding-top: 0;
+      padding-bottom: 80px;
     }
   </style>
 </head>
 
 <body>
-
+  <div class="header-bg"></div>
   <div class="header">
-    <div class="header-right">
-      <img src="humberger.png" alt="Hamburger Menu Icon" style="width: 30px; height: 30px;">
+    <div class="header-row">
+      <div class="header-icon">
+        <img src="humberger.png" alt="Hamburger Menu Icon">
+      </div>
+      <div class="header-icon">
+        <img src="back.png" alt="Back Arrow Icon">
+      </div>
     </div>
-    <div class="header-center">
-      <h4>برنامه های سیما</h4>
-    </div>
-    <div class="header-left">
-      <img src="back.png" alt="Back Arrow Icon" style="width: 30px; height: 30px;">
-    </div>
+    <div class="header-title">برنامه های سیما</div>
   </div>
 
-  <div class="container mt-4">
+  <div class="container programs-section">
     <div class="row">
       <div class="col-6 col-md-6">
         <div class="program-card">
-          <img src="return-home.png" alt="به خانه برمی‌گردیم">
-          <h5>به خانه برمی گردیم</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-6">
-        <div class="program-card">
           <img src="cook-with-mom.png" alt="آشپزی با مامان">
-          <h5>آشپزی با مامان</h5>
+          <div class="program-title">آشپزی با مامان</div>
         </div>
       </div>
       <div class="col-6 col-md-6">
         <div class="program-card">
-          <img src="cook-reason.png" alt="بهونه آشپزی">
-          <h5>بهونه آشپزی</h5>
+          <img src="return-home.png" alt="به خانه برمی‌گردیم">
+          <div class="program-title">به خانه برمی گردیم</div>
         </div>
       </div>
       <div class="col-6 col-md-6">
         <div class="program-card">
           <img src="nasim-channel.png" alt="شبکه نسیم">
-          <h5>شبکه نسیم</h5>
+          <div class="program-title">شبکه نسیم</div>
         </div>
       </div>
       <div class="col-6 col-md-6">
         <div class="program-card">
-          <img src="cooking.png" alt="آشپزی">
-          <h5>آشپزی</h5>
+          <img src="cook-reason.png" alt="بهونه آشپزی">
+          <div class="program-title">بهونه آشپزی</div>
         </div>
       </div>
       <div class="col-6 col-md-6">
         <div class="program-card">
           <img src="cook-advise.png" alt="پخت و پند">
-          <h5>پخت و پند</h5>
+          <div class="program-title">پخت و پند</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="cooking.png" alt="آشپزی">
+          <div class="program-title">آشپزی</div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="bottom-nav">
-    <img src="button-menu-home.png" alt="Person Icon">
-    <img src="button-menu-media.png" alt="Play/Calendar Icon">
-    <img src="button-menu-middle.png" alt="Home Icon">
-    <img src="button-menu-love.png" alt="Heart Icon">
-    <img src="button-menu-book.png" alt="Book Icon">
+    <div class="nav-icon">
+      <img src="button-menu-home.png" alt="Person Icon">
+    </div>
+    <div class="nav-icon">
+      <img src="button-menu-media.png" alt="Play/Calendar Icon">
+    </div>
+    <div class="nav-icon active">
+      <img src="button-menu-middle.png" alt="Home Icon">
+      <span class="nav-dot"></span>
+    </div>
+    <div class="nav-icon">
+      <img src="button-menu-love.png" alt="Heart Icon">
+    </div>
+    <div class="nav-icon">
+      <img src="button-menu-book.png" alt="Book Icon">
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
