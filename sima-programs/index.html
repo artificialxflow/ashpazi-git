@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>برنامه های سیما</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS */
+    body {
+      font-family: sans-serif;
+    }
+
+    /* Header Section */
+    .header {
+      background-color: #f8bbd0;
+      /* Pink/Red color */
+      color: white;
+      padding: 10px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky; /* Add sticky or fixed to keep it at top on scroll */
+      top: 0;
+      z-index: 1000; /* Ensure it stays above other content */
+    }
+
+    .header-right {
+      margin-right: 10px;
+    }
+
+    .header-center {
+      text-align: center;
+      flex-grow: 1; /* Allow center text to take available space */
+    }
+
+    .header-left {
+      margin-left: 10px;
+    }
+
+    /* Program Cards Grid */
+    .program-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden; /* Ensures image corners are also rounded */
+    }
+
+    .program-card img {
+      width: 100%;
+      height: 180px; /* Fixed height as requested */
+      object-fit: cover; /* Ensures image covers the area without distortion */
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .program-card h5 {
+      padding: 10px;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Bottom Navigation Bar */
+    .bottom-nav {
+      background-color: #f8bbd0;
+      /* Pink/Red color */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1000; /* Ensure it stays above other content */
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+    }
+
+    .bottom-nav img {
+      width: 30px;
+      height: 30px; /* Set fixed height to avoid aspect ratio issues */
+      object-fit: contain; /* Ensures icon scales within bounds */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .header {
+        padding: 5px;
+      }
+
+      .header-center h4 {
+        font-size: 1.2rem;
+      }
+
+      .program-card h5 {
+        font-size: 1rem;
+      }
+
+      .bottom-nav {
+        padding: 5px;
+      }
+
+      .bottom-nav img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    /* Ensure content is not hidden by fixed header/footer */
+    body {
+        padding-top: 60px; /* Adjust based on header height */
+        padding-bottom: 70px; /* Adjust based on footer height */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="header-right">
+      <img src="humberger.png" alt="Hamburger Menu Icon" style="width: 30px; height: 30px;">
+    </div>
+    <div class="header-center">
+      <h4>برنامه های سیما</h4>
+    </div>
+    <div class="header-left">
+      <img src="back.png" alt="Back Arrow Icon" style="width: 30px; height: 30px;">
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="return-home.png" alt="به خانه برمی‌گردیم">
+          <h5>به خانه برمی گردیم</h5>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="cook-with-mom.png" alt="آشپزی با مامان">
+          <h5>آشپزی با مامان</h5>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="cook-reason.png" alt="بهونه آشپزی">
+          <h5>بهونه آشپزی</h5>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="nasim-channel.png" alt="شبکه نسیم">
+          <h5>شبکه نسیم</h5>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="cooking.png" alt="آشپزی">
+          <h5>آشپزی</h5>
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="program-card">
+          <img src="cook-advise.png" alt="پخت و پند">
+          <h5>پخت و پند</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <img src="button-menu-home.png" alt="Person Icon">
+    <img src="button-menu-media.png" alt="Play/Calendar Icon">
+    <img src="button-menu-middle.png" alt="Home Icon">
+    <img src="button-menu-love.png" alt="Heart Icon">
+    <img src="button-menu-book.png" alt="Book Icon">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
